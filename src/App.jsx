@@ -18,6 +18,24 @@ function AnimatedSection({ children }) {
     </motion.div>
   )
 }
+
+function AnimatedGridItem({ children, index, className }) {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, amount: 0.3 })
+
+  return (
+    <motion.div
+      ref={ref}
+      className={className}
+      initial={{ opacity: 0, y: 30 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.5, delay: index * 0.15 }}
+    >
+      {children}
+    </motion.div>
+  )
+}
+
 export default function App() {
   const [currentSection, setCurrentSection] = useState('home')
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -245,18 +263,12 @@ export default function App() {
             </div>
             <div className="services-grid">
               {services.map((service, index) => (
-                <motion.div 
-                  key={index} 
-                  className="service-card"
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={useInView(useRef(null), { once: true, amount: 0.5 }) ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.5, delay: index * 0.2 }}
-                >
+                <AnimatedGridItem key={index} index={index} className="service-card">
                   <div className="service-icon">{service.icon}</div>
                   <h3>{service.title}</h3>
                   <p>{service.description}</p>
                   <button className="service-btn">Learn More</button>
-                </motion.div>
+                </AnimatedGridItem>
               ))}
             </div>
           </div>
@@ -273,13 +285,7 @@ export default function App() {
             </div>
             <div className="portfolio-grid">
               {portfolioItems.map((item, index) => (
-                <motion.div 
-                  key={index} 
-                  className="portfolio-item"
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={useInView(useRef(null), { once: true, amount: 0.3 }) ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                >
+                <AnimatedGridItem key={index} index={index} className="portfolio-item">
                   <div className="portfolio-image">
                     <img src={item.image} alt={item.title} />
                     <div className="portfolio-overlay">
@@ -295,7 +301,7 @@ export default function App() {
                       </div>
                     </div>
                   </div>
-                </motion.div>
+                </AnimatedGridItem>
               ))}
             </div>
           </div>
@@ -312,20 +318,14 @@ export default function App() {
             </div>
             <div className="team-grid">
               {teamMembers.map((member, index) => (
-                <motion.div 
-                  key={index} 
-                  className="team-card"
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={useInView(useRef(null), { once: true, amount: 0.5 }) ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.5, delay: index * 0.2 }}
-                >
+                <AnimatedGridItem key={index} index={index} className="team-card">
                   <div className="team-avatar">
                     <img src={`https://picsum.photos/seed/${member.name.replace(/\s/g, '')}/200/200`} alt={member.name} />
                   </div>
                   <h3>{member.name}</h3>
                   <p className="team-role">{member.role}</p>
                   <p className="team-bio">{member.bio}</p>
-                </motion.div>
+                </AnimatedGridItem>
               ))}
             </div>
           </div>
