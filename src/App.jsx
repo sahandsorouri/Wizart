@@ -55,7 +55,7 @@ export default function App() {
       title: "Luxury Fashion Brand Identity",
       category: "Branding",
       description: "Complete brand identity design including logo, color palette, and brand guidelines for a premium fashion boutique.",
-      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop",
+      image: "https://picsum.photos/seed/fashion/400/300",
       client: "Elegance Boutique",
       year: "2024"
     },
@@ -63,7 +63,7 @@ export default function App() {
       title: "Instagram Growth Campaign",
       category: "Social Media",
       description: "30-day social media campaign that increased follower engagement by 300% and generated 50+ new leads.",
-      image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&h=300&fit=crop",
+      image: "https://picsum.photos/seed/social/400/300",
       client: "Tech Startup",
       year: "2024"
     },
@@ -71,7 +71,7 @@ export default function App() {
       title: "Corporate Event Experience",
       category: "Events",
       description: "Design and execution of a product launch event for 200+ attendees with immersive brand experiences.",
-      image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=400&h=300&fit=crop",
+      image: "https://picsum.photos/seed/event/400/300",
       client: "Innovation Corp",
       year: "2023"
     },
@@ -79,7 +79,7 @@ export default function App() {
       title: "E-commerce Website Design",
       category: "Web Design",
       description: "Complete website redesign resulting in 45% increase in conversions and improved user experience.",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop",
+      image: "https://picsum.photos/seed/ecommerce/400/300",
       client: "Online Retailer",
       year: "2023"
     },
@@ -87,7 +87,7 @@ export default function App() {
       title: "Restaurant Brand Package",
       category: "Branding",
       description: "Full branding package including menu design, signage, and marketing materials for a modern restaurant.",
-      image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=400&h=300&fit=crop",
+      image: "https://picsum.photos/seed/restaurant/400/300",
       client: "Fusion Kitchen",
       year: "2024"
     },
@@ -95,7 +95,7 @@ export default function App() {
       title: "Music Festival Campaign",
       category: "Events",
       description: "Creative campaign and visual identity for a 3-day music festival, including stage design and promotional materials.",
-      image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=300&fit=crop",
+      image: "https://picsum.photos/seed/music/400/300",
       client: "Summer Beats Festival",
       year: "2023"
     }
@@ -125,7 +125,7 @@ export default function App() {
       <nav className="navbar">
         <div className="nav-container">
           <div className="nav-logo">
-            <h2>WIZART</h2>
+            <h2>WizArt</h2>
           </div>
           <div className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
             <a href="#home" className={currentSection === 'home' ? 'active' : ''} onClick={() => scrollToSection('home')}>Home</a>
@@ -180,14 +180,14 @@ export default function App() {
       <section id="about" className="about">
         <div className="container">
           <div className="section-header">
-            <h2>About Wizart</h2>
+            <h2>About WizArt</h2>
             <p>We are a passionate creative team dedicated to bringing your vision to life</p>
           </div>
           <div className="about-content">
             <div className="about-text">
               <h3>Crafting Digital Excellence</h3>
               <p>
-                At Wizart, we believe in the power of creative storytelling and strategic design. 
+                At WizArt, we believe in the power of creative storytelling and strategic design. 
                 Our team combines artistic vision with data-driven insights to create compelling 
                 digital experiences that resonate with your audience.
               </p>
@@ -211,7 +211,7 @@ export default function App() {
               </div>
             </div>
             <div className="about-image">
-              <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=500&h=400&fit=crop" alt="Team collaboration" />
+              <img src="https://picsum.photos/500/400" alt="Team collaboration" />
             </div>
           </div>
         </div>
@@ -273,13 +273,13 @@ export default function App() {
         <div className="container">
           <div className="section-header">
             <h2>Meet Our Team</h2>
-            <p>The creative minds behind Wizart</p>
+            <p>The creative minds behind WizArt</p>
           </div>
           <div className="team-grid">
             {teamMembers.map((member, index) => (
               <div key={index} className="team-card">
                 <div className="team-avatar">
-                  <img src={`https://images.unsplash.com/photo-${1500000000000 + index}?w=200&h=200&fit=crop&crop=face`} alt={member.name} />
+                  <img src={`https://picsum.photos/seed/${member.name.replace(/\s/g, '')}/200/200`} alt={member.name} />
                 </div>
                 <h3>{member.name}</h3>
                 <p className="team-role">{member.role}</p>
@@ -352,7 +352,7 @@ export default function App() {
         <div className="container">
           <div className="footer-content">
             <div className="footer-logo">
-              <h3>WIZART</h3>
+              <h3>WizArt</h3>
               <p>Creating exceptional digital experiences</p>
             </div>
             <div className="footer-links">
@@ -364,7 +364,7 @@ export default function App() {
             </div>
           </div>
           <div className="footer-bottom">
-            <p>&copy; 2024 Wizart. All rights reserved.</p>
+            <p>&copy; 2024 WizArt. All rights reserved.</p>
           </div>
         </div>
       </footer>
